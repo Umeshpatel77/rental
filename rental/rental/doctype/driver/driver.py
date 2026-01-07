@@ -5,8 +5,9 @@
 from frappe.model.document import Document
 
 class Driver(Document):
-    def before_save(self):
-        self.full_name = f"{self.first_name} {self.last_name}"
+    # def before_save(self):
+    #     self.full_name = f"{self.first_name} {self.last_name}"
 
-    def send_alert(self):
-        print("sending message")
+    # def send_alert(self):
+    #     print("sending message")
+    pass

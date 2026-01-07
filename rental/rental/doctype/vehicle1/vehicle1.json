@@ -10,6 +10,7 @@
   "year",
   "color",
   "full_name",
+  "audit_completed",
   "column_break_nxtu",
   "model",
   "license_plate",
@@ -71,6 +72,13 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route"
+  },
+  {
+   "default": "0",
+   "fieldname": "audit_completed",
+   "fieldtype": "Check",
+   "label": "Audit Completed?",
+   "permlevel": 1
   }
  ],
  "grid_page_length": 50,
@@ -78,7 +86,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "is_published",
  "links": [],
- "modified": "2026-01-07 00:13:24.940277",
+ "modified": "2026-01-07 15:14:25.689394",
  "modified_by": "Administrator",
  "module": "Rental",
  "name": "Vehicle1",
@@ -93,6 +101,41 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle Supervisor",
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "Vehicle Auditor"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle Auditor",
    "share": 1,
    "write": 1
   }

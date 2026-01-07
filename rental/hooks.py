@@ -9,7 +9,7 @@ app_license = "mit"
 # ------------------
 
 # required_apps = []
-
+fixtures =[{"dt":"Vehicles Type","filters":{"is_standard":1}}]
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{
@@ -117,6 +117,10 @@ app_license = "mit"
 # -----------
 # Permissions evaluated in scripted ways
 
+permission_query_conditions ={
+	"Vehicle": "rentals.api.get_query_conditions_for_vehicle",
+}
+
 # permission_query_conditions = {
 # 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
 # }
@@ -145,6 +149,12 @@ app_license = "mit"
 # 	}
 # }
 
+doc_events={
+    "ToDo":{
+        "before_insert":"rental.api.throw_emoji"
+	}
+}
+
 # Scheduled Tasks
 # ---------------
 
@@ -165,6 +175,14 @@ app_license = "mit"
 # 		"rental.tasks.monthly"
 # 	],
 # }
+
+scheduler_events = {
+    "Cron": {
+        "30 15 * * 3": [
+            "rentals.api.send_payment_reminders"
+        ]
+    }
+}
 
 # Testing
 # -------
